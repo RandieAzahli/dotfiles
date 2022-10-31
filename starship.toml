@@ -46,3 +46,90 @@ symbol = " "
 
 [directory]
 format = "[in](bold #fabc50)[$path]($style)[$read_only]($read_only_style) "
+style = "bold #47ccfc"
+home_symbol = "  "
+read_only = "  "
+read_only_style = "red"
+truncation_length = 4
+truncation_symbol = " …/"
+truncate_to_repo = true
+
+[git_branch]
+format = '([\[ $symbol$branch \]]($style) )'
+symbol = "   "
+style = "bold #ff5cd1"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold #f7f55c"
+conflicted = "🏳 "
+ahead = " 🏎💨 ⇡${count} "
+behind = "${count}i "
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+up_to_date = " ✓ "
+untracked = "🤷"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
+
+[git_commit]
+format = '[\( $hash$tag\)]($style) '
+style = "bold green"
+commit_hash_length = 6
+only_detached = false
+tag_disabled = false
+tag_symbol = "  "
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+merge = "[🍒 MERGING](bold red)"
+style = "bold red"
+
+[git_metrics]
+added_style = "bold green"
+deleted_style = "bold red"
+format = "[+$added]($added_style) / [-$deleted]($deleted_style) "
+disabled = false
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "bold green"
+
+[time]
+format = '[\[ $time \]]($style) '
+time_format = "%T"
+time_range = "00:00:00-24:00:00"
+disabled = false
+style = "bold #fc6ab8"
+
+[battery]
+format = "[$symbol$percentage]($style) "
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[[battery.display]] # "bold red" style and discharging_symbol when capacity is between 0% and 10%
+threshold = 20
+style = "bold red"
+charging_symbol = " ⚡️  "
+discharging_symbol = " 💀   "
+
+[[battery.display]]
+threshold = 40
+style = "bold yellow"
+charging_symbol = " ⚡️  "
+discharging_symbol = " 💀   "
+
+[[battery.display]]
+threshold = 96
+style = "bold #47ccfc"
+charging_symbol = " ⚡️  "
+discharging_symbol = " 💀   "
+
+[[battery.display]]
+threshold = 100
+style = "bold green"
+charging_symbol = " ⚡️  "
+discharging_symbol = " 💀   "
